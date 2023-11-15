@@ -14,9 +14,9 @@
 void sum(tmp_stack **top, unsigned int line_number)
 {
 	int res;
-	tmp_stack *tmporal;
+	tmp_stack *tmp;
 
-	if (!*top || (*top)->next == NULL)
+	if (*top == NULL || (*top)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't sum, stack too short\n", line_number);
 		free(col.line);
@@ -25,11 +25,11 @@ void sum(tmp_stack **top, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	res = (*top)->n + (*top)->next->n;
-	tmporal = *top;
+	tmp = *top;
 	*top = (*top)->next;
 	(*top)->prev = NULL;
 	(*top)->n = res;
-	free(tmporal);
+	free(tmp);
 
 
 }
@@ -47,11 +47,11 @@ void sum(tmp_stack **top, unsigned int line_number)
 
 void exchange(tmp_stack **top, unsigned int line_number)
 {
+	tmp_stack *tmp = *top;
 	int data;
-	tmp_stack *tmporal;
 
-	tmporal = *top;
-	if (!*top || (*top)->next == NULL)
+
+	if (*top == NULL || (*top)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		free(col.line);
@@ -59,9 +59,9 @@ void exchange(tmp_stack **top, unsigned int line_number)
 		clearStack(top);
 		exit(EXIT_FAILURE);
 	}
-	tmporal = *top;
-	data = tmporal->n;
-	tmporal->n = tmporal->next->n;
-	tmporal->next->n = data;
+	tmp = *top;
+	data = tmp->n;
+	tmp->n = tmp->next->n;
+	tmp->next->n = data;
 
 }

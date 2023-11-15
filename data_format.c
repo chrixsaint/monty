@@ -24,8 +24,8 @@ int funcnCaller(char *line, unsigned int line_number, tmp_stack **stack)
 		{"mod", computeMod},
 		{NULL, NULL}
 	};
-	int find = 0;
-	int aii = 0;
+	int i = 0;
+	int found = 0;
 	char *opcode;
 
 	opcode = strtok(line, " \t\n");
@@ -34,17 +34,17 @@ int funcnCaller(char *line, unsigned int line_number, tmp_stack **stack)
 		return (0);
 	}
 	col.arg = strtok(NULL, " \t\n");
-	while (opcodes[aii].opcode != NULL && opcode != NULL)
+	while (opcodes[i].opcode != NULL && opcode != NULL)
 	{
-		if (strcmp(opcode, opcodes[aii].opcode) == 0)
+		if (strcmp(opcode, opcodes[i].opcode) == 0)
 		{
-			opcodes[aii].f(stack, line_number);
-			find = 1;
+			opcodes[i].f(stack, line_number);
+			found = 1;
 			break;
 		}
-		aii++;
+		i++;
 	}
-	if (find == 0)
+	if (found == 0)
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
 		exit(EXIT_FAILURE);
@@ -62,16 +62,14 @@ int funcnCaller(char *line, unsigned int line_number, tmp_stack **stack)
 
 void clearStack(tmp_stack **stack)
 {
-	tmp_stack *tmporal = NULL;
 	tmp_stack *current = *stack;
-	/* Initialize tmporal to NULL */
+	tmp_stack *tmp = NULL; /* Initialize tmp to NULL */
 
-	while (!current)
+	while (current != NULL)
 	{
-		tmporal = current;
+		tmp = current;
 		current = current->next;
-		free(tmporal);
+		free(tmp);
 	}
-	*stack = NULL;
-	/*Set the top of the stack to NULL */
+	*stack = NULL; /*Set the top of the stack to NULL */
 }

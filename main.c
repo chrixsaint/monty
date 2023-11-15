@@ -8,12 +8,12 @@ col_t col = {NULL, NULL, NULL};
 */
 int main(int argc, char *argv[])
 {
-	ssize_t readNum;
-	unsigned int numbaLine = 0;
 	tmp_stack *stack = NULL;
 	FILE *file;
-	size_t lentt = 0;
 	char *line = NULL;
+	size_t len = 0;
+	ssize_t nread;
+	unsigned int line_number = 0;
 
 	if (argc != 2)
 	{
@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while ((readNum = getline(&line, &lentt, file)) != -1)
+	while ((nread = getline(&line, &len, file)) != -1)
 	{
-		numbaLine++;
-		if (funcnCaller(line, numbaLine, &stack) == 0)
+		line_number++;
+		if (funcnCaller(line, line_number, &stack) == 0)
 			continue;
 	}
 	clearStack(&stack);

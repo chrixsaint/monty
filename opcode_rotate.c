@@ -53,18 +53,15 @@ void opcodePush(tmp_stack **top, unsigned int line_number)
  */
 void prntAll(tmp_stack **head, unsigned int line_number)
 {
-	tmp_stack *hc;
+	tmp_stack *h = NULL;
 	(void)line_number;
-	
-	hc = NULL;
-	hc = *head;
-	if (!hc)
-	{
+
+	h = *head;
+	if (h == NULL)
 		return;
-	}
-	while (hc)
+	while (h)
 	{
-		printf("%d\n", hc->n);
-		hc = hc->next;
+		printf("%d\n", h->n);
+		h = h->next;
 	}
 }

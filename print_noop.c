@@ -1,7 +1,8 @@
 #include "monty.h"
 
 /**
- * topPrinter - Prints the value at the top of the stack, followed by a new line.
+ * topPrinter - Prints the value at the top of the stack,
+ * followed by a new line.
  *
  * @top: Double pointer to the top of the stack.
  * @line_number: Line number of the opcode.
@@ -13,7 +14,7 @@
 void topPrinter(tmp_stack **top, unsigned int line_number)
 {
 
-	if (!*top)
+	if (*top == NULL)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		fclose(col.file);
@@ -21,7 +22,9 @@ void topPrinter(tmp_stack **top, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	else
+	{
 		printf("%d\n", (*top)->n);
+	}
 
 }
 
@@ -37,8 +40,8 @@ void topPrinter(tmp_stack **top, unsigned int line_number)
 
 void redundant(tmp_stack **top, unsigned int line_number)
 {
+	/*(void) cast expression*/
 	(void)top;
 	(void)line_number;
-	/*(void) expression cast */
 
 }

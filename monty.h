@@ -11,7 +11,8 @@
 #include <limits.h>
 
 /**
- * struct stack_s - doubly linked list representation of a stack (or queue)
+ * struct stack_struct - doubly linked list representation
+ * of a stack (or queue)
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
@@ -54,7 +55,6 @@ typedef struct col_s
 extern col_t col;
 
 int funcnCaller(char *line, unsigned int line_number, tmp_stack **stack);
-/*void parse_line(char *line, char *opcode, char *arg); */
 void opcodePush(tmp_stack **stack, unsigned int line_number);
 void stakPusher(tmp_stack **stack, int value);
 void clearStack(tmp_stack **stack);

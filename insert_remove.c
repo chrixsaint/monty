@@ -15,7 +15,7 @@ void stakPusher(tmp_stack **top, int value)
 	tmp_stack *new_node;
 
 	new_node = malloc(sizeof(tmp_stack));
-	if (!new_node)
+	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
@@ -23,7 +23,7 @@ void stakPusher(tmp_stack **top, int value)
 	new_node->n = value;
 	new_node->prev = NULL;
 	new_node->next = NULL; /*added*/
-	if (*top)
+	if (*top != NULL)
 	{
 		new_node->next = *top;
 		(*top)->prev = new_node;
@@ -42,9 +42,9 @@ void stakPusher(tmp_stack **top, int value)
  */
 void remove_top(tmp_stack **top, unsigned int line_number)
 {
-	tmp_stack *tmporal;
+	tmp_stack *tmp;
 
-	if (!*top)
+	if (*top == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		free(col.line);
@@ -52,12 +52,12 @@ void remove_top(tmp_stack **top, unsigned int line_number)
 		clearStack(top);
 		exit(EXIT_FAILURE);
 	}
-	tmporal = *top;
-	*top = tmporal->next;
-	if (*top)
+	tmp = *top;
+	*top = tmp->next;
+	if (*top != NULL)
 	{
 		(*top)->prev = NULL;
 	}
-	free(tmporal);
+	free(tmp);
 }
 

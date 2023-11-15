@@ -15,10 +15,10 @@
 
 void multply(tmp_stack **top, unsigned int line_number)
 {
-	int riset;
-	tmp_stack *tmporal;
+	tmp_stack *tmp;
+	int res;
 
-	if (!*top || (*top)->next == NULL)
+	if (*top == NULL || (*top)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't multply, stack too short\n", line_number);
 		fclose(col.file);
@@ -32,12 +32,12 @@ void multply(tmp_stack **top, unsigned int line_number)
 		free(col.line);
 		exit(EXIT_FAILURE);
 	}
-	riset = (*top)->n * (*top)->next->n;
-	tmporal = *top;
+	res = (*top)->n * (*top)->next->n;
+	tmp = *top;
 	*top = (*top)->next; /*new top is sec node*/
 	(*top)->prev = NULL;
-	(*top)->n = riset;
-	free(tmporal);
+	(*top)->n = res;
+	free(tmp);
 
 }
 /**
@@ -50,9 +50,7 @@ void multply(tmp_stack **top, unsigned int line_number)
 int intChecker(int num)
 {
 	if (num == (int)num)
-	{
 		return (1);
-	}
 	else
 		return (0);
 }
@@ -73,10 +71,10 @@ int intChecker(int num)
 
 void computeMod(tmp_stack **top, unsigned int line_number)
 {
-	int riset;
-	tmp_stack *tmporal;
+	tmp_stack *tmp;
+	int res;
 
-	if (!*top || (*top)->next == NULL)
+	if (*top == NULL || (*top)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 		free(col.line);
@@ -95,12 +93,14 @@ void computeMod(tmp_stack **top, unsigned int line_number)
 		exit(EXIT_FAILURE);
 
 	}
-	tmporal = *top;
-	riset = (*top)->next->n % (*top)->n;
+	tmp = *top;
+	res = (*top)->next->n % (*top)->n;
 	*top = (*top)->next;
-	(*top)->n = riset;
+	(*top)->n = res;
 	if (*top != NULL)
+	{
 		(*top)->prev = NULL;
-	free(tmporal);
+	}
+	free(tmp);
 }
 
