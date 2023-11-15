@@ -1,10 +1,10 @@
-opcodePush 1
-opcodePush 2
-opcodePush 3
-prntAll
-remove_top
-prntAll
-remove_top
-prntAll
-remove_top
-prntAll
+push 1
+push 2
+push 3
+pall
+pop
+pall
+pop
+pall
+pop
+pall

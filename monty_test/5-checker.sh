@@ -6,12 +6,12 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # monty bytcode test case:
-montyBytes="opcodePush 1
-topPrinter
-opcodePush 2
-topPrinter
-opcodePush 3
-topPrinter"
+montyBytes="push 1
+pint
+push 2
+pint
+push 3
+pint"
 
 # make test case file:
 echo "$montyBytes" > testCase00

@@ -6,12 +6,12 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # monty bytcode test case:
-montyBytes="opcodePush 1
-opcodePush 2
-opcodePush 10
-opcodePush 3
-subtrakt
-prntAll
+montyBytes="push 1
+push 2
+push 10
+push 3
+sub
+pall
 
 "
 

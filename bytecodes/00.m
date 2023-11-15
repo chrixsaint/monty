@@ -1,4 +1,4 @@
-opcodePush 1
-opcodePush 2
-opcodePush 3
-prntAll
+push 1
+push 2
+push 3
+pall

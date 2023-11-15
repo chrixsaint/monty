@@ -1,6 +1,6 @@
-opcodePush 1
-opcodePush 2
-opcodePush 10
-opcodePush 3
-subtrakt
-prntAll
+push 1
+push 2
+push 10
+push 3
+sub
+pall

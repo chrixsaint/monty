@@ -1,6 +1,6 @@
-opcodePush 1
-topPrinter
-opcodePush 2
-topPrinter
-opcodePush 3
-topPrinter
+push 1
+pint
+push 2
+pint
+push 3
+pint

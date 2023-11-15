@@ -1,9 +1,9 @@
-opcodePush 0$
-opcodePush 1$
-opcodePush 2$
-  opcodePush 3$
-                   prntAll    $
-opcodePush 4$
-    opcodePush 5    $
-      opcodePush    6        $
-prntAll$
+push 0$
+push 1$
+push 2$
+  push 3$
+                   pall    $
+push 4$
+    push 5    $
+      push    6        $
+pall$
