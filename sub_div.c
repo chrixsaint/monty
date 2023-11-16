@@ -8,7 +8,7 @@
  * @counter: Line number of the current operation.
  * This function subtracts the top element of the stack
  * from the second top element. It modifies the stack accordingly,
- * and the result is stored at the second top element
+ * and the result is stored at the second top element.
  */
 
 void subtrakt(MontyNode_t **head, unsigned int counter)
