@@ -9,7 +9,7 @@
  * @file: Pointer to the Monty file.
  *
  * Return: 0 if the opcode is a comment or
- * if the line is empty, 1 otherwise
+ * if the line is empty, 1 otherwise.
  */
 int funcnCaller(char *content, MontyNode_t **stack,
 unsigned int counter, FILE *file)
