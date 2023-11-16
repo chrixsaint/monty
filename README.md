@@ -3,7 +3,7 @@
 Monty 0.98 is a scripting language akin to Python, initially compiled into Monty byte codes. It operates on a distinctive stack, employing specific instructions for stack manipulation. The primary objective of this project is to develop an interpreter for Monty ByteCodes files.
 
 Monty Byte Code Files
-Monty byte code files commonly bear the .m extension, a standard adopted by most of the industry, although not mandated by the language specification. Each line in these files contains at most one instruction. The opcode and its argument can be accompanied by any number of spaces before or after, allowing for flexible formatting.
+Monty byte code files commonly bear the .m extension, a standard adopted by most of the industry, although not mandated by the language specification. Each line in these files contains at most one instruction. The opcode and its argument can be accompanied by any number of spaces before or after, allowing for flexible formatting
 
 ```
  push 0$
@@ -18,7 +18,7 @@ pall$
 
 ```
 
-Monty byte code files can contain blank lines (empty or made of spaces only, and any additional text after the opcode or its required argument is not taken into account:
+Monty byte code files can contain blank lines (empty or made of spaces only, and any additional text after the opcode or its required argument is not taken into account):
 
 ```
 push 0 Push 0 onto the stack$
@@ -43,6 +43,7 @@ pall This is the end of our program. Monty is awesome!$
 
 All the files are compiled in the following form:
 
+### Compilation
 ```
  gcc -Wall -Werror -Wextra -pedantic *.c -o monty.
 
@@ -66,7 +67,8 @@ Available operation codes:
 ::pall == Prints all the values on the stack, starting from the to of the stack.:
 ::pint == Prints the value at the top of the stack.:
 ::pop  == Removes the to element of the stack. :
-::div    : Divides the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.:
+::div    : Divides the top two elements of the stack from the second top element.
+The result is then stored in the second node, and the first node is removed.:
 ::mul | Multiplies the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.:
 ::mod    : Computes the remainder of the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.:
 :#      : When the first non-space of a line is a # the line will be trated as a comment.:
@@ -75,5 +77,10 @@ Available operation codes:
 ::swap == Swaps the top to elements of the stack.:
 ::add  == Adds the top two elements of the stack. The result is then stored in the second node, and the first node is removed.
 ::nop    : This opcode does not do anything.:
-::sub    : Subtracts the top two elements of the stack from the second top element. The result is then stored in the second node, and the first node is removed.:
+::sub    : Subtracts the top two elements of the stack from the second top element.
+
+## AUTHORS
+This is a solo project:
+
+Christian Ochenehi Peter --> [My GitHub Profile](https://github.com/chrixsaint)
 
