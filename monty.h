@@ -33,7 +33,7 @@ typedef struct montyNode_s
  * @file: pointer to monty file
  * @content: line content
  * @lifi: flag change stack <-> queue
- * Description: carries values through the program.
+ * Description: carries values through the program
  */
 typedef struct struct_s
 {

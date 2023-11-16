@@ -6,7 +6,7 @@ struct_t bus = {NULL, NULL, NULL, 0};
  *
  * @argc: Number of command-line arguments.
  * @argv: Array of command-line arguments.
- * Return: 0 on success, or EXIT_FAILURE on failure.
+ * Return: 0 on success, or EXIT_FAILURE on failure
  */
 
 int main(int argc, char *argv[])

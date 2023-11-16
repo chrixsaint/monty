@@ -45,7 +45,7 @@ void subtrakt(MontyNode_t **head, unsigned int counter)
  * This function divides the second top element of the stack
  * by the top element. It modifies the stack accordingly,
  * and the result is stored at the second top element.
- * Handles division by zero and stack length checks.
+ * Handles division by zero and stack length checks
  */
 void    divider(MontyNode_t **head, unsigned int counter)
 {

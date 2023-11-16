@@ -30,7 +30,7 @@ void   topPrinter(MontyNode_t **head, unsigned int counter)
  * @counter: Line number of the current operation.
  * This function does nothing and is used as a placeholder.
  * It takes the stack head and line number as parameters but
- * does not perform any operation.
+ * does not perform any operation
  */
 void   redundant(MontyNode_t **head, unsigned int counter)
 {

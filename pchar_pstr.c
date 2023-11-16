@@ -8,7 +8,7 @@
  * @counter: Line number of the current operation.
  * This function prints the ASCII character at the top of the stack.
  * If the stack is empty or the value is out of the
- * ASCII range, it prints an error message and exits.
+ * ASCII range, it prints an error message and exits
  */
 
 void prnt_char(MontyNode_t **head, unsigned int counter)

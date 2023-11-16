@@ -37,7 +37,7 @@ __attribute__((unused)) unsigned int counter)
  * This function rotates the stack to the bottom by moving the
  * last element to the top. If the stack is empty or has only
  * one element, it does nothing. The parameter `counter` is
- * marked as unused since it is not utilized in the function.
+ * marked as unused since it is not utilized in the function
  */
 
 void f_rotr(MontyNode_t **head, __attribute__((unused)) unsigned int counter)

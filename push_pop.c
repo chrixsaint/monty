@@ -33,7 +33,7 @@ void  remove_top(MontyNode_t **head, unsigned int counter)
  * This function checks if a valid integer is provided
  * as an argument (bus.arg), and if so, it adds a new node
  * with the integer value to the stack. If the argument is not a
- * valid integer, it prints an error message and exits.
+ * valid integer, it prints an error message and exits
  */
 
 void  opcodePush(MontyNode_t **head, unsigned int counter)

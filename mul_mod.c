@@ -46,7 +46,7 @@ void  multply(MontyNode_t **head, unsigned int counter)
  * This function calculates the remainder when dividing the
  * second top element by the top element.
  * If the stack has less than two elements or division
- * by zero occurs, it prints an error message and exits.
+ * by zero occurs, it prints an error message and exits
  */
 void  computeMod(MontyNode_t **head, unsigned int counter)
 {

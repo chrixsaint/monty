@@ -36,7 +36,7 @@ void insertNode(MontyNode_t **head, int n)
  * This function prints all the values in the stack,
  * starting from the head. It ignores the 'counter'
  * parameter, which is there to match the function
- * signature required for opcode functions.
+ * signature required for opcode functions
  */
 void   prntAll(MontyNode_t **head, unsigned int counter)
 {
