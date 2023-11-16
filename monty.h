@@ -1,13 +1,18 @@
 #ifndef MONTY_H
 #define MONTY_H
+
 #define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
+
 #include <stdlib.h>
 #include <sys/types.h>
+
 #include <unistd.h>
 #include <fcntl.h>
+
 #include <string.h>
 #include <ctype.h>
+
 #include <limits.h>
 
 /**
@@ -58,26 +63,36 @@ typedef struct comand_s
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
+
 void  opcodePush(MontyNode_t **head, unsigned int number);
 void   prntAll(MontyNode_t **head, unsigned int number);
 void   topPrinter(MontyNode_t **head, unsigned int number);
+
 int funcnCaller(char *content, MontyNode_t **head,
 unsigned int counter, FILE *file);
 void  clearStack(MontyNode_t *head);
+
 void  remove_top(MontyNode_t **head, unsigned int counter);
 void exchange(MontyNode_t **head, unsigned int counter);
+
 void sum(MontyNode_t **head, unsigned int counter);
 void   redundant(MontyNode_t **head, unsigned int counter);
+
 void subtrakt(MontyNode_t **head, unsigned int counter);
 void    divider(MontyNode_t **head, unsigned int counter);
+
 void  multply(MontyNode_t **head, unsigned int counter);
 void  computeMod(MontyNode_t **head, unsigned int counter);
+
 void prnt_char(MontyNode_t **head, unsigned int counter);
 void insertNode(MontyNode_t **head, int n);
+
 void left_rotatn(MontyNode_t **head, unsigned int counter);
 void addqueue(MontyNode_t **head, int n);
+
 void switch_stack(MontyNode_t **head, unsigned int counter);
 void enqueue(MontyNode_t **head, unsigned int counter);
+
 void prnt_strng(MontyNode_t **head, unsigned int counter);
 
 /**
