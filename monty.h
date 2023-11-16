@@ -15,8 +15,7 @@
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
- *
- * Description: doubly linked list node structure
+ * doubly linked list node structure
  * for stack, queues, LIFO, FIFO Holberton project
  */
 
@@ -33,7 +32,7 @@ typedef struct montyNode_s
  * @file: pointer to monty file
  * @content: line content
  * @lifi: flag change stack <-> queue
- * Description: carries values through the program
+ * carries values through the program
  */
 typedef struct struct_s
 {
@@ -47,8 +46,7 @@ extern struct_t bus;
  * struct comand_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
- *
- * Description: opcode and its function
+ * opcode and its function
  * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct comand_s
@@ -75,9 +73,9 @@ void    divider(MontyNode_t **head, unsigned int counter);
 void  multply(MontyNode_t **head, unsigned int counter);
 void  computeMod(MontyNode_t **head, unsigned int counter);
 void prnt_char(MontyNode_t **head, unsigned int counter);
-void left_rotatn(MontyNode_t **head, unsigned int counter);
 void f_rotr(MontyNode_t **head, __attribute__((unused)) unsigned int counter);
 void insertNode(MontyNode_t **head, int n);
+void left_rotatn(MontyNode_t **head, unsigned int counter);
 void addqueue(MontyNode_t **head, int n);
 void switch_stack(MontyNode_t **head, unsigned int counter);
 void enqueue(MontyNode_t **head, unsigned int counter);
