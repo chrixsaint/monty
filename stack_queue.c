@@ -8,7 +8,7 @@
  * This function sets the stack mode, indicating that
  * the Monty interpreter should operate in stack mode.
  * The parameters `head` and `counter` are marked as unused
- * since they are not utilized in the function
+ * since they are not utilized in the function.
  */
 void switch_stack(MontyNode_t **head, unsigned int counter)
 {
