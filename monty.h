@@ -47,7 +47,7 @@ extern struct_t bus;
  * @opcode: the opcode
  * @f: function to handle the opcode
  * opcode and its function
- * for stack, queues, LIFO, FIFO Holberton project
+ * for stack, queues, LIFO, FIFO Holberton project.
  */
 typedef struct comand_s
 {
