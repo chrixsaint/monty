@@ -27,7 +27,7 @@ unsigned int counter, FILE *file)
 				{"pchar", prnt_char},
 				{"pstr", prnt_strng},
 				{"rotl", left_rotatn},
-				{"rotr", f_rotr},
+				{"rotr", right_rotatn},
 				{"queue", enqueue},
 				{"stack", switch_stack},
 				{NULL, NULL}

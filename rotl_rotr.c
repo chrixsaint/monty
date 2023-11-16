@@ -30,7 +30,7 @@ __attribute__((unused)) unsigned int counter)
 
 
 /**
- * f_rotr - Rotates the stack to the bottom.
+ * right_rotatn - Rotates the stack to the bottom.
  *
  * @head: Pointer to the head of the stack.
  * @counter: Line number of the current operation (unused).
@@ -40,7 +40,7 @@ __attribute__((unused)) unsigned int counter)
  * marked as unused since it is not utilized in the function.
  */
 
-void f_rotr(MontyNode_t **head, __attribute__((unused)) unsigned int counter)
+void right_rotatn(MontyNode_t **head, __attribute__((unused)) unsigned int counter)
 {
 	MontyNode_t *cntrl_c;
 

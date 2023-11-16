@@ -73,7 +73,7 @@ void    divider(MontyNode_t **head, unsigned int counter);
 void  multply(MontyNode_t **head, unsigned int counter);
 void  computeMod(MontyNode_t **head, unsigned int counter);
 void prnt_char(MontyNode_t **head, unsigned int counter);
-void f_rotr(MontyNode_t **head, __attribute__((unused)) unsigned int counter);
+void right_rotatn(MontyNode_t **head, __attribute__((unused)) unsigned int counter);
 void insertNode(MontyNode_t **head, int n);
 void left_rotatn(MontyNode_t **head, unsigned int counter);
 void addqueue(MontyNode_t **head, int n);
