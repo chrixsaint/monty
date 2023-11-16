@@ -10,7 +10,7 @@
  */
 void  remove_top(MontyNode_t **head, unsigned int counter)
 {
-	MontyNode_t *h;
+	MontyNode_t *hc;
 
 	if (*head == NULL)
 	{
@@ -20,9 +20,9 @@ void  remove_top(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	*head = h->next;
-	free(h);
+	hc = *head;
+	*head = hc->next;
+	free(hc);
 }
 
 /**
@@ -38,17 +38,20 @@ void  remove_top(MontyNode_t **head, unsigned int counter)
 
 void  opcodePush(MontyNode_t **head, unsigned int counter)
 {
-	int n, j = 0, flag = 0;
+	int n, k, mark;
 
+	k = 0, mark = 0;
 	if (bus.arg)
 	{
 		if (bus.arg[0] == '-')
-			j++;
-		for (; bus.arg[j] != '\0'; j++)
 		{
-			if (bus.arg[j] > 57 || bus.arg[j] < 48)
-				flag = 1; }
-		if (flag == 1)
+			k++;
+		}
+		for (; bus.arg[k] != '\0'; k++)
+		{
+			if (bus.arg[k] > 57 || bus.arg[k] < 48)
+				mark = 1; }
+		if (mark == 1)
 		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 			fclose(bus.file);
 			free(bus.content);
@@ -64,5 +67,7 @@ void  opcodePush(MontyNode_t **head, unsigned int counter)
 	if (bus.lifi == 0)
 		insertNode(head, n);
 	else
+	{
 		addqueue(head, n);
+	}
 }

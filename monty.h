@@ -11,7 +11,7 @@
 #include <limits.h>
 
 /**
- * struct stack_s - doubly linked list representation of a stack (or queue)
+ * struct montyNode_s - doubly linked list representation of a stack (or queue)
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
  * @next: points to the next element of the stack (or queue)
@@ -19,19 +19,21 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO Holberton project
  */
+
 typedef struct montyNode_s
 {
 	int n;
 	struct montyNode_s *prev;
 	struct montyNode_s *next;
 } MontyNode_t;
+
 /**
- * struct bus_s - variables -args, file, line content
+ * struct struct_s - variables -args, file, line content
  * @arg: value
  * @file: pointer to monty file
  * @content: line content
  * @lifi: flag change stack <-> queue
- * Description: carries values through the program
+ * Description: carries values through the program.
  */
 typedef struct struct_s
 {
@@ -42,7 +44,7 @@ typedef struct struct_s
 }  struct_t;
 extern struct_t bus;
 /**
- * struct instruction_s - opcode and its function
+ * struct comand_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
  *
@@ -61,7 +63,8 @@ char  *clean_line(char *content);
 void  opcodePush(MontyNode_t **head, unsigned int number);
 void   prntAll(MontyNode_t **head, unsigned int number);
 void   topPrinter(MontyNode_t **head, unsigned int number);
-int funcnCaller(char *content, MontyNode_t **head, unsigned int counter, FILE *file);
+int funcnCaller(char *content, MontyNode_t **head,
+unsigned int counter, FILE *file);
 void  clearStack(MontyNode_t *head);
 void  remove_top(MontyNode_t **head, unsigned int counter);
 void exchange(MontyNode_t **head, unsigned int counter);
@@ -72,11 +75,12 @@ void    divider(MontyNode_t **head, unsigned int counter);
 void  multply(MontyNode_t **head, unsigned int counter);
 void  computeMod(MontyNode_t **head, unsigned int counter);
 void prnt_char(MontyNode_t **head, unsigned int counter);
-void prnt_strng(MontyNode_t **head, unsigned int counter);
 void left_rotatn(MontyNode_t **head, unsigned int counter);
 void f_rotr(MontyNode_t **head, __attribute__((unused)) unsigned int counter);
 void insertNode(MontyNode_t **head, int n);
 void addqueue(MontyNode_t **head, int n);
-void enqueue(MontyNode_t **head, unsigned int counter);
 void switch_stack(MontyNode_t **head, unsigned int counter);
+void enqueue(MontyNode_t **head, unsigned int counter);
+void prnt_strng(MontyNode_t **head, unsigned int counter);
+
 #endif

@@ -11,16 +11,17 @@
  */
 void exchange(MontyNode_t **head, unsigned int counter)
 {
-	MontyNode_t *h;
-	int len = 0, aux;
+	int  xin, lentt;
+	MontyNode_t *hc;
 
-	h = *head;
-	while (h)
+	lentt = 0;
+	hc = *head;
+	while (hc)
 	{
-		h = h->next;
-		len++;
+		hc = hc->next;
+		lentt++;
 	}
-	if (len < 2)
+	if (lentt < 2)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
 		fclose(bus.file);
@@ -28,10 +29,10 @@ void exchange(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	aux = h->n;
-	h->n = h->next->n;
-	h->next->n = aux;
+	hc = *head;
+	xin = hc->n;
+	hc->n = hc->next->n;
+	hc->next->n = xin;
 }
 
 
@@ -48,16 +49,17 @@ void exchange(MontyNode_t **head, unsigned int counter)
  */
 void sum(MontyNode_t **head, unsigned int counter)
 {
-	MontyNode_t *h;
-	int len = 0, aux;
+	int xin, lentt;
+	MontyNode_t *hc;
 
-	h = *head;
-	while (h)
+	lentt = 0;
+	hc = *head;
+	while (hc)
 	{
-		h = h->next;
-		len++;
+		hc = hc->next;
+		lentt++;
 	}
-	if (len < 2)
+	if (lentt < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
 		fclose(bus.file);
@@ -65,9 +67,9 @@ void sum(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	aux = h->n + h->next->n;
-	h->next->n = aux;
-	*head = h->next;
-	free(h);
+	hc = *head;
+	xin = hc->n + hc->next->n;
+	hc->next->n = xin;
+	*head = hc->next;
+	free(hc);
 }

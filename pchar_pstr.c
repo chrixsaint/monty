@@ -13,10 +13,10 @@
 
 void prnt_char(MontyNode_t **head, unsigned int counter)
 {
-	MontyNode_t *h;
+	MontyNode_t *hc;
 
-	h = *head;
-	if (!h)
+	hc = *head;
+	if (hc == NULL)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", counter);
 		fclose(bus.file);
@@ -24,7 +24,7 @@ void prnt_char(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	if (h->n > 127 || h->n < 0)
+	if (hc->n > 127 || hc->n < 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", counter);
 		fclose(bus.file);
@@ -32,7 +32,7 @@ void prnt_char(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	printf("%c\n", h->n);
+	printf("%c\n", hc->n);
 }
 
 
@@ -49,18 +49,16 @@ void prnt_char(MontyNode_t **head, unsigned int counter)
 
 void prnt_strng(MontyNode_t **head, unsigned int counter)
 {
-	MontyNode_t *h;
+	MontyNode_t *hc;
 	(void)counter;
 
-	h = *head;
-	while (h)
+	hc = *head;
+	while (hc)
 	{
-		if (h->n > 127 || h->n <= 0)
-		{
+		if (hc->n > 127 || hc->n <= 0)
 			break;
-		}
-		printf("%c", h->n);
-		h = h->next;
+		printf("%c", hc->n);
+		hc = hc->next;
 	}
 	printf("\n");
 }

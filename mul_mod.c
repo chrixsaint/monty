@@ -12,16 +12,16 @@
 
 void  multply(MontyNode_t **head, unsigned int counter)
 {
-	MontyNode_t *h;
-	int len = 0, aux;
+	int xin, size = 0;
+	MontyNode_t *hc;
 
-	h = *head;
-	while (h)
+	hc = *head;
+	while (hc)
 	{
-		h = h->next;
-		len++;
+		hc = hc->next;
+		size++;
 	}
-	if (len < 2)
+	if (size < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", counter);
 		fclose(bus.file);
@@ -29,11 +29,11 @@ void  multply(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	aux = h->next->n * h->n;
-	h->next->n = aux;
-	*head = h->next;
-	free(h);
+	hc = *head;
+	xin = hc->next->n * hc->n;
+	hc->next->n = xin;
+	*head = hc->next;
+	free(hc);
 }
 
 
@@ -50,16 +50,17 @@ void  multply(MontyNode_t **head, unsigned int counter)
  */
 void  computeMod(MontyNode_t **head, unsigned int counter)
 {
-	MontyNode_t *h;
-	int len = 0, aux;
+	int size, xin;
+	MontyNode_t *hc;
 
-	h = *head;
-	while (h)
+	size = 0;
+	hc = *head;
+	while (hc)
 	{
-		h = h->next;
-		len++;
+		hc = hc->next;
+		size++;
 	}
-	if (len < 2)
+	if (size < 2)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", counter);
 		fclose(bus.file);
@@ -67,8 +68,8 @@ void  computeMod(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	if (h->n == 0)
+	hc = *head;
+	if (hc->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", counter);
 		fclose(bus.file);
@@ -76,8 +77,8 @@ void  computeMod(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	aux = h->next->n % h->n;
-	h->next->n = aux;
-	*head = h->next;
-	free(h);
+	xin = hc->next->n % hc->n;
+	hc->next->n = xin;
+	*head = hc->next;
+	free(hc);
 }

@@ -13,13 +13,15 @@
 
 void subtrakt(MontyNode_t **head, unsigned int counter)
 {
-	MontyNode_t *aux;
-	int sus, nodes;
+	int zux, list;
+	MontyNode_t *xin;
 
-	aux = *head;
-	for (nodes = 0; aux != NULL; nodes++)
-		aux = aux->next;
-	if (nodes < 2)
+	xin = *head;
+	for (list = 0; xin != NULL; list++)
+	{
+		xin = xin->next;
+	}
+	if (list < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", counter);
 		fclose(bus.file);
@@ -27,11 +29,11 @@ void subtrakt(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	aux = *head;
-	sus = aux->next->n - aux->n;
-	aux->next->n = sus;
-	*head = aux->next;
-	free(aux);
+	xin = *head;
+	zux = xin->next->n - xin->n;
+	xin->next->n = zux;
+	*head = xin->next;
+	free(xin);
 }
 
 
@@ -47,16 +49,16 @@ void subtrakt(MontyNode_t **head, unsigned int counter)
  */
 void    divider(MontyNode_t **head, unsigned int counter)
 {
-	MontyNode_t *h;
-	int len = 0, aux;
+	MontyNode_t *hc;
+	int lentt = 0, xin;
 
-	h = *head;
-	while (h)
+	hc = *head;
+	while (hc)
 	{
-		h = h->next;
-		len++;
+		hc = hc->next;
+		lentt++;
 	}
-	if (len < 2)
+	if (lentt < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", counter);
 		fclose(bus.file);
@@ -64,8 +66,8 @@ void    divider(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	if (h->n == 0)
+	hc = *head;
+	if (hc->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", counter);
 		fclose(bus.file);
@@ -73,8 +75,8 @@ void    divider(MontyNode_t **head, unsigned int counter)
 		 clearStack(*head);
 		exit(EXIT_FAILURE);
 	}
-	aux = h->next->n / h->n;
-	h->next->n = aux;
-	*head = h->next;
-	free(h);
+	xin = hc->next->n / hc->n;
+	hc->next->n = xin;
+	*head = hc->next;
+	free(hc);
 }

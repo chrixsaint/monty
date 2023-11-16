@@ -12,19 +12,19 @@
 void insertNode(MontyNode_t **head, int n)
 {
 
-	MontyNode_t *new_node, *aux;
+	MontyNode_t *fresh_node, *xin;
 
-	aux = *head;
-	new_node = malloc(sizeof(MontyNode_t));
-	if (new_node == NULL)
+	xin = *head;
+	fresh_node = malloc(sizeof(MontyNode_t));
+	if (!fresh_node)
 	{ printf("Error\n");
 		exit(0); }
-	if (aux)
-		aux->prev = new_node;
-	new_node->n = n;
-	new_node->next = *head;
-	new_node->prev = NULL;
-	*head = new_node;
+	if (xin)
+		xin->prev = fresh_node;
+	fresh_node->n = n;
+	fresh_node->next = *head;
+	fresh_node->prev = NULL;
+	*head = fresh_node;
 }
 
 
@@ -40,15 +40,17 @@ void insertNode(MontyNode_t **head, int n)
  */
 void   prntAll(MontyNode_t **head, unsigned int counter)
 {
-	MontyNode_t *h;
+	MontyNode_t *hc;
 	(void)counter;
 
-	h = *head;
-	if (h == NULL)
-		return;
-	while (h)
+	hc = *head;
+	if (!hc)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
+		return;
+	}
+	while (hc)
+	{
+		printf("%d\n", hc->n);
+		hc = hc->next;
 	}
 }

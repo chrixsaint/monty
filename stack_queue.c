@@ -48,29 +48,29 @@ void enqueue(MontyNode_t **head, unsigned int counter)
 
 void addqueue(MontyNode_t **head, int n)
 {
-	MontyNode_t *new_node, *aux;
+	MontyNode_t *new_node, *xin;
 
-	aux = *head;
+	xin = *head;
 	new_node = malloc(sizeof(MontyNode_t));
 	if (new_node == NULL)
-	{
 		printf("Error\n");
-	}
 	new_node->n = n;
 	new_node->next = NULL;
-	if (aux)
+	if (xin)
 	{
-		while (aux->next)
-			aux = aux->next;
+		while (xin->next)
+		{
+			xin = xin->next;
+		}
 	}
-	if (!aux)
+	if (xin == NULL)
 	{
 		*head = new_node;
 		new_node->prev = NULL;
 	}
 	else
 	{
-		aux->next = new_node;
-		new_node->prev = aux;
+		xin->next = new_node;
+		new_node->prev = xin;
 	}
 }

@@ -32,23 +32,23 @@ unsigned int counter, FILE *file)
 				{"stack", switch_stack},
 				{NULL, NULL}
 				};
-	unsigned int i = 0;
-	char *op;
+	char *vc;
+	unsigned int aii = 0;
 
-	op = strtok(content, " \n\t");
-	if (op && op[0] == '#')
+	vc = strtok(content, " \n\t");
+	if (vc && vc[0] == '#')
 		return (0);
 	bus.arg = strtok(NULL, " \n\t");
-	while (opst[i].opcode && op)
+	while (opst[aii].opcode && vc)
 	{
-		if (strcmp(op, opst[i].opcode) == 0)
-		{	opst[i].f(stack, counter);
+		if (strcmp(vc, opst[aii].opcode) == 0)
+		{	opst[aii].f(stack, counter);
 			return (0);
 		}
-		i++;
+		aii++;
 	}
-	if (op && opst[i].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
+	if (vc && opst[aii].opcode == NULL)
+	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, vc);
 		fclose(file);
 		free(content);
 		 clearStack(*stack);
@@ -63,13 +63,13 @@ unsigned int counter, FILE *file)
  */
 void  clearStack(MontyNode_t *head)
 {
-	MontyNode_t *aux;
+	MontyNode_t *xin;
 
-	aux = head;
+	xin = head;
 	while (head)
 	{
-		aux = head->next;
+		xin = head->next;
 		free(head);
-		head = aux;
+		head = xin;
 	}
 }

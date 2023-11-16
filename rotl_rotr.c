@@ -13,22 +13,19 @@
 void left_rotatn(MontyNode_t **head,
 __attribute__((unused)) unsigned int counter)
 {
-	MontyNode_t *tmp = *head, *aux;
+	MontyNode_t *temporal, *xin;
 
+	temporal = *head;
 	if (*head == NULL || (*head)->next == NULL)
-	{
 		return;
-	}
-	aux = (*head)->next;
-	aux->prev = NULL;
-	while (tmp->next != NULL)
-	{
-		tmp = tmp->next;
-	}
-	tmp->next = *head;
+	xin = (*head)->next;
+	xin->prev = NULL;
+	while (temporal->next != NULL)
+		temporal = temporal->next;
+	temporal->next = *head;
 	(*head)->next = NULL;
-	(*head)->prev = tmp;
-	(*head) = aux;
+	(*head)->prev = temporal;
+	(*head) = xin;
 }
 
 
@@ -45,20 +42,16 @@ __attribute__((unused)) unsigned int counter)
 
 void f_rotr(MontyNode_t **head, __attribute__((unused)) unsigned int counter)
 {
-	MontyNode_t *copy;
+	MontyNode_t *cntrl_c;
 
-	copy = *head;
-	if (*head == NULL || (*head)->next == NULL)
-	{
+	cntrl_c = *head;
+	if (!*head || (*head)->next == NULL)
 		return;
-	}
-	while (copy->next)
-	{
-		copy = copy->next;
-	}
-	copy->next = *head;
-	copy->prev->next = NULL;
-	copy->prev = NULL;
-	(*head)->prev = copy;
-	(*head) = copy;
+	while (cntrl_c->next)
+		cntrl_c = cntrl_c->next;
+	cntrl_c->next = *head;
+	cntrl_c->prev->next = NULL;
+	cntrl_c->prev = NULL;
+	(*head)->prev = cntrl_c;
+	(*head) = cntrl_c;
 }
