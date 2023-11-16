@@ -45,7 +45,7 @@ void exchange(MontyNode_t **head, unsigned int counter)
  * Description:
  * This function adds the top two elements of the stack.
  * It modifies the stack accordingly, and the result
- * is stored at the second top element. Handles stack length checks
+ * is stored at the second top element. Handles stack length checks.
  */
 void sum(MontyNode_t **head, unsigned int counter)
 {
