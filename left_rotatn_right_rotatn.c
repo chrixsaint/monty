@@ -40,7 +40,8 @@ __attribute__((unused)) unsigned int counter)
  * marked as unused since it is not utilized in the function.
  */
 
-void right_rotatn(MontyNode_t **head, __attribute__((unused)) unsigned int counter)
+void right_rotatn(MontyNode_t **head, __attribute__((unused))
+unsigned int counter)
 {
 	MontyNode_t *cntrl_c;
 
